@@ -55,15 +55,33 @@ namespace AlgoritmsLab4
         }
         public void Reverse()
         {
-            Node<T> current = tail;
-            Queue<T> temp = new Queue<T>();
-            while(current !=head)
+            Stack<T> temp = new Stack<T>();
+            foreach (var item in this)
             {
-                temp.Enqueue(current.Data);
-                current = current.Next;
+                temp.Push(item);
+                this.Dequeue();
+            }
+            while (temp.Count > 0)
+            {
+                this.Enqueue(temp.Peek());
+                temp.Pop();
             }
         }
-
+        public void Change()
+        {
+            Stack<T> temp = new Stack<T>();
+            foreach (var item in this)
+            {
+                temp.Push(item);
+                this.Dequeue();
+            }
+            temp.ChangePlaces();
+            while (temp.Count > 0)
+            {
+                this.Enqueue(temp.Peak());
+                temp.Pop();
+            }
+        }
         IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable)this).GetEnumerator();

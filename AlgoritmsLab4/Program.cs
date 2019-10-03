@@ -1,6 +1,6 @@
 ﻿//!готово!-основні операції над статичною/динамічною чергою;
 //-змінити місцями перший та останній елемент черги;
-//-розвернути чергу;
+//-!готово!розвернути чергу;
 //-!готово!видалити всі елементи черги;
 //-!готово!операція «чи належить заданий елемент» статичній/динамічній черзі.
 
@@ -21,7 +21,7 @@ namespace AlgoritmsLab4
             queue.Enqueue("Sam");
             queue.Enqueue("Alice");
             queue.Enqueue("Tom");
-
+            queue.Change();
             foreach (string item in queue)
                 Console.WriteLine(item);
             Console.WriteLine();
